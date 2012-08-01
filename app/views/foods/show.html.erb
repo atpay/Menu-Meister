@@ -1,0 +1,12 @@
+<h2><%= @food.name %></h2>
+<p>Calories: <%= @food.calories %></p>
+
+<ul>
+  <li><%= link_to "Index", foods_path %></li>
+  <li><%= link_to "Edit", edit_food_path(@food) %></li>
+  <li><%= link_to "Destroy", food_path(@food), 
+        :method => :delete, 
+        :data => { :confirm => "Are you sure?" } 
+      %></li>
+</ul>
+

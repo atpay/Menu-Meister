@@ -1,0 +1,8 @@
+<%= semantic_form_for(@food) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :calories, :as => :string %>
+
+  <%= f.actions do %>
+    <%= f.submit %>
+  <% end %>
+<% end %>

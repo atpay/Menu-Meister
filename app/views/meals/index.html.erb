@@ -1,0 +1,11 @@
+<p>
+  <ul>
+  <% @meals.each do |meal| %>
+    <li><%= link_to meal.name, meal %></li>
+  <% end %>
+  </ul>
+</p>
+
+<p>
+  <%= link_to "Create new meal", new_meal_path %>
+</p>

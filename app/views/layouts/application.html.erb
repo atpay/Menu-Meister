@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MenuMeister</title>
+  <%= stylesheet_link_tag    "application", "bootstrap", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">
+        Menu Meister
+      </a>
+
+      <ul class="nav pull-right">
+        <li class="active">
+          <% unless current_user %>
+            <%= link_to "Log in With Facebook", "/auth/facebook" %>
+          <% else %>
+            Welcome, <%= current_user.email %>, 
+              <%= link_to "Log out", logout_path %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <% if flash[:notice] %>
+    <div class="alert">
+      <button class="close" data-dismiss="alert">×</button>
+      <strong><%= flash[:notice] %></strong>
+    </div>
+  <% end %>
+
+  <%= yield %>
+
+  <ul>
+    <li><%= link_to "Meals", meals_path %></li>
+    <li><%= link_to "Foods", foods_path %></li>
+  </ul>
+</div>
+
+</body>
+</html>

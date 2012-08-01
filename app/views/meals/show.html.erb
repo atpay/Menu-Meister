@@ -1,0 +1,17 @@
+<h2><%= @meal.name %></h2>
+
+<p><%= @meal.description %></p>
+
+<h3>Calorie Count: <%= @meal.foods.sum(:calories) %></h3>
+
+<ul>
+  <% @meal.foods.each do |food| %>
+    <li><%= food.name %></li>
+  <% end %>
+</ul>
+
+<ul>
+  <li><%= link_to "My Meals", meals_path %></li>
+  <li><%= link_to "Destroy", meal_path(@meal), :method => :delete, :data => { :confirm => "Are you sure?" } %></li>
+</ul>
+
