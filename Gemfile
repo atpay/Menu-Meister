@@ -39,6 +39,7 @@ gem 'omniauth-facebook'
 # To use debugger
 # gem 'ruby-debug'
 
+gem 'rcov'
 gem 'pry'
 gem 'inherited_resources'
 gem 'formtastic'
